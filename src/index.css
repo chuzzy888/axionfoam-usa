@@ -1,0 +1,247 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+.open ul .dhead{
+    font-size: 8px !important;
+    color: rgb(36,182,242) !important;
+}
+.dp{
+    height: 300px !important;
+    object-fit: cover;   
+}
+
+.accountLink{
+    font-size: 15px;
+    font-weight: 600 !important;
+    transition: .2s ease-in;
+    margin-right: 29px !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+
+}
+
+.accountLink:hover{
+    color: red !important;
+}
+
+@media (max-width:600px) {
+    .accountLink{
+      
+        margin-right:10px !important;
+    }
+}
+
+.filter-input{
+    border: 2px solid rgba(0, 0, 0, 0.539);
+    /* color: rgba(0, 0, 0, 0.237); */
+    padding: 4px 6px;
+    margin-top: 30px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+
+.bg-gray-300{
+    background-color: rgba(220, 220, 220, 0.178);
+}
+
+.bg-3{
+    /* background-color: gainsboro; */
+    padding:50px 0
+}
+
+.dark-2{
+    background-color: rgb(207, 207, 207);
+}
+
+.lightbox-image{
+    cursor: grab;
+}
+
+@media (max-width:1023px) {
+    .subbtext{
+        color: red !important;
+        font-size: 1000px;
+    }
+}
+
+.admin-container{
+    display: flex;
+    margin-top: 70px;
+
+}
+
+.admin-left{
+    height: calc(100vh - 101px);
+    background-color: rgba(255, 0, 0, 0.115);
+    width: 20vw;
+}
+.admin-left .link{
+  background-color: rgba(255, 0, 0, 0.136);
+  margin-bottom: 20px;
+   color: black;
+   padding: 8px 0;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.admin-left .link:hover{
+  background-color: rgba(102, 2, 2, 0.136);
+ 
+}
+.admin-left .active{
+  background-color: red;
+  margin-bottom: 20px;
+   color: white;
+   padding: 8px 0;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.admin-left .active:hover{ 
+    background-color: red;
+}
+
+.admin-right{
+    background-color: rgba(0, 0, 0, 0.026);
+    width: 80vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.dashboard-card{
+    color: white ;
+    background-color: rgb(28, 158, 223);
+    border-radius: 7px;
+}
+
+.linee{
+    background-color: rgba(128, 128, 128, 0.123);
+    height: 3px;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+.eachsize{
+    background-color: rgba(28, 158, 223, 0.236);
+    color: black !important;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+.eachsize p{
+    padding: 6px 0; margin: 0 10px 0 0;
+    color: black !important;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.eachsize span{
+    background-color: black;
+    color: white ;
+    margin-left: 4px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-bottom: 5px;
+ 
+}
+.eachsize span{
+    background-color: black;
+    color: white ;
+    margin-left: 4px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-bottom: 5px;
+ 
+}
+@media (min-width:900px) {
+    .eachsize span{
+        min-width: 150px;
+    }
+}
+@media (min-width:700px) {
+    .eachsize span{
+        min-width: 100px;
+    }
+}
+.admin th , .admin td {
+    text-align: center;
+    text-transform: capitalize;
+}
+.custDialog .modal-dialog {
+    max-width: 95vw !important;
+}
+.modal-title{
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.145);
+}
+.myinput{
+    font-size: 13px !important;
+}
+
+.success-animation { margin:150px auto;}
+
+.checkmark {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #4bb71b;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #4bb71b;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    position:relative;
+    top: 5px;
+    right: 5px;
+   margin: 0 auto;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4bb71b;
+    fill: #fff;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+ 
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #4bb71b;
+        
+    }
+}
