@@ -45,7 +45,7 @@ export const Compare = () => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
+        "http://localhost:3000/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -114,8 +114,8 @@ export const Compare = () => {
   const getAllProducts = async () => {
     try {
       const response = await axios.get(
-        "https://axionbackend2.betsphere.com.ng/api/getproducts"
-        // "https://axionbackend2.betsphere.com.ng/api/getproducts"
+        "http://localhost:3000/api/getproducts"
+        // "http://localhost:3000/api/getproducts"
       );
       setProductData(response?.data?.data);
 
@@ -183,15 +183,12 @@ export const Compare = () => {
 
       console.log({ name, email, phone, message });
 
-      const data = await axios.post(
-        `https://axionbackend2.betsphere.com.ng/api/addmessage`,
-        {
-          name,
-          email,
-          phonenumber: phone,
-          message,
-        }
-      );
+      const data = await axios.post(`http://localhost:3000/api/addmessage`, {
+        name,
+        email,
+        phonenumber: phone,
+        message,
+      });
 
       alert("Message sent successfully");
       setMessage("");

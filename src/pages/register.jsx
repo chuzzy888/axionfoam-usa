@@ -37,8 +37,8 @@ export const Register = () => {
       }
 
       const data = await axios.post(
-        // "https://axionbackend2.betsphere.com.ng/api/register",
-        "https://axionbackend2.betsphere.com.ng/api/register",
+        // "http://localhost:3000/api/register",
+        "http://localhost:3000/api/register",
         {
           email,
           password,

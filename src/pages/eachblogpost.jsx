@@ -96,15 +96,12 @@ export const Eachblogpost = () => {
 
       console.log({ name, email, phone, message });
 
-      const data = await axios.post(
-        `https://axionbackend2.betsphere.com.ng/api/addmessage`,
-        {
-          name,
-          email,
-          phonenumber: phone,
-          message,
-        }
-      );
+      const data = await axios.post(`http://localhost:3000/api/addmessage`, {
+        name,
+        email,
+        phonenumber: phone,
+        message,
+      });
 
       alert("Message sent successfully");
       setMessage("");

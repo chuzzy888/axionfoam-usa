@@ -23,10 +23,21 @@ export const Checkout = () => {
   const [products, setProducts] = useState(localStorage.getItem("cart"));
   const [show, setShow] = useState(false);
   const [showPay, setShowPay] = useState(false);
+  const [stripePromise, setStripePromise] = useState(null);
+  const [clientSecret, setClientSecret] = useState("null");
 
   // Stripe Beginning
 
-  const stripePromise = loadStripe(import.meta.env.VITE_API_PUBLICKEY);
+  // const stripePromise = loadStripe(import.meta.env.VITE_API_PUBLICKEY);
+
+  // import.meta.env.VITE_API_PUBLICKEY
+
+  useEffect(() => {
+    console.log(total);
+  }, []);
+  useEffect(() => {
+    setStripePromise(loadStripe(import.meta.env.VITE_API_PUBLICKEY));
+  }, []);
 
   const options = {
     mode: "payment",
@@ -105,10 +116,30 @@ export const Checkout = () => {
 
   const [dollarRate, setDollarRate] = useState(null);
 
+  console.log(dollarRate);
+
+  const createPaymentIntent = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/create-payment-intent",
+        {
+          amount: Math.round(Number(total) / dollarRate) * 100,
+          currency: "usd",
+        }
+      );
+      console.log(response);
+
+      const { clientSecret } = await response.data;
+      setClientSecret(clientSecret);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
+        "http://localhost:3000/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -119,6 +150,12 @@ export const Checkout = () => {
   useEffect(() => {
     getDollarRate();
   }, []);
+
+  useEffect(() => {
+    if (dollarRate) {
+      createPaymentIntent();
+    }
+  }, [dollarRate]);
 
   const handleSubmit = async () => {
     try {
@@ -140,8 +177,8 @@ export const Checkout = () => {
 
       console.log(JSON.parse(products));
       const newData = await axios.post(
-        "https://axionbackend2.betsphere.com.ng/api/addorder",
-        // "https://axionbackend2.betsphere.com.ng/api/addorder",
+        "http://localhost:3000/api/addorder",
+        // "http://localhost:3000/api/addorder",
         {
           username: user.email,
           products: JSON.parse(products),
@@ -155,7 +192,9 @@ export const Checkout = () => {
         }
       );
       console.log(newData);
+
       // alert("Order placed successfully");
+
       handleShow();
     } catch (error) {
       console.log(error);
@@ -192,17 +231,16 @@ export const Checkout = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: user?.email,
-    amount: total * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    amount: total * 100,
     publicKey: "pk_live_eedc7ffbdd5dbbdb114d9549e984f755794ea763",
   };
 
-  const handlePaystackSuccessAction = async (reference) => {
-    console.log(reference);
+  const handleAddOrder = async (reference) => {
     try {
       console.log(JSON.parse(products));
       const newData = await axios.post(
-        "https://axionbackend2.betsphere.com.ng/api/addorder",
-        // "https://axionbackend2.betsphere.com.ng/api/addorder",
+        "http://localhost:3000/api/addorder",
+        // "http://localhost:3000/api/addorder",
         {
           username: user.email,
           products: JSON.parse(products),
@@ -216,7 +254,7 @@ export const Checkout = () => {
         }
       );
       console.log(newData);
-      // alert("Order placed successfully");
+
       handleShow();
     } catch (error) {
       console.log(error);
@@ -228,12 +266,12 @@ export const Checkout = () => {
     console.log("closed");
   };
 
-  const componentProps = {
-    ...config,
-    text: ` Online payment`,
-    onSuccess: (reference) => handlePaystackSuccessAction(reference),
-    onClose: handlePaystackCloseAction,
-  };
+  // const componentProps = {
+  //   ...config,
+  //   text: ` Online payment`,
+  //   onSuccess: (reference) => handlePaystackSuccessAction(reference),
+  //   onClose: handlePaystackCloseAction,
+  // };
 
   return (
     <div className="page-wrapper">
@@ -566,9 +604,25 @@ export const Checkout = () => {
             <Modal.Title></Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Elements stripe={stripePromise} options={options}>
-              <CheckoutForm />
-            </Elements>
+            <div
+              className="text-danger"
+              style={{
+                textAlign: "right",
+              }}
+            >
+              Total amount to pay ${Math.round(total / dollarRate)}
+            </div>
+            {stripePromise && clientSecret && (
+              <Elements stripe={stripePromise} options={{ clientSecret }}>
+                <CheckoutForm
+                  products={products}
+                  user={user}
+                  total={total}
+                  dollarRate={dollarRate}
+                  handleAddOrder={handleAddOrder}
+                />
+              </Elements>
+            )}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseStripePay}>
