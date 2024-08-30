@@ -14,7 +14,7 @@ export const Login = () => {
     try {
       setLoading(true);
       const data = await axios.post(
-        "https://axionbackend.betsphere.com.ng/api/login",
+        "https://axionbackend2.betsphere.com.ng/api/login",
         {
           email,
           password,

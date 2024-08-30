@@ -121,7 +121,7 @@ export const Checkout = () => {
   const createPaymentIntent = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/create-payment-intent",
+        "https://axionbackend2.betsphere.com.ng/api/create-payment-intent",
         {
           amount: Math.round(Number(total) / dollarRate) * 100,
           currency: "usd",
@@ -139,7 +139,7 @@ export const Checkout = () => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getdollarrate"
+        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -177,8 +177,8 @@ export const Checkout = () => {
 
       console.log(JSON.parse(products));
       const newData = await axios.post(
-        "http://localhost:3000/api/addorder",
-        // "http://localhost:3000/api/addorder",
+        "https://axionbackend2.betsphere.com.ng/api/addorder",
+        // "https://axionbackend2.betsphere.com.ng/api/addorder",
         {
           username: user.email,
           products: JSON.parse(products),
@@ -239,8 +239,8 @@ export const Checkout = () => {
     try {
       console.log(JSON.parse(products));
       const newData = await axios.post(
-        "http://localhost:3000/api/addorder",
-        // "http://localhost:3000/api/addorder",
+        "https://axionbackend2.betsphere.com.ng/api/addorder",
+        // "https://axionbackend2.betsphere.com.ng/api/addorder",
         {
           username: user.email,
           products: JSON.parse(products),

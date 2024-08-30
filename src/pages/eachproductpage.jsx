@@ -50,7 +50,7 @@ export const Eachproductpage = () => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getdollarrate"
+        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -65,8 +65,8 @@ export const Eachproductpage = () => {
   const getAllProducts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getproducts"
-        // "http://localhost:3000/api/getproducts"
+        "https://axionbackend2.betsphere.com.ng/api/getproducts"
+        // "https://axionbackend2.betsphere.com.ng/api/getproducts"
       );
       console.log(response?.data?.data);
       setProductData(response?.data?.data);
@@ -88,8 +88,8 @@ export const Eachproductpage = () => {
       }
 
       const response = await axios.put(
-        "http://localhost:3000/api/addreview",
-        // "http://localhost:3000/api/addreview",
+        "https://axionbackend2.betsphere.com.ng/api/addreview",
+        // "https://axionbackend2.betsphere.com.ng/api/addreview",
         {
           id: pageData?.id,
           reviewername: reviewerName,

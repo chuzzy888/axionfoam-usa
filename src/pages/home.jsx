@@ -41,8 +41,8 @@ export const Home = () => {
   const getAllProducts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getproducts"
-        // "http://localhost:3000/api/getproducts"
+        "https://axionbackend2.betsphere.com.ng/api/getproducts"
+        // "https://axionbackend2.betsphere.com.ng/api/getproducts"
       );
       console.log(response?.data?.data);
       setProductData(response?.data?.data);

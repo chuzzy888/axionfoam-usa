@@ -72,7 +72,7 @@ export const Orders2 = () => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getdollarrate"
+        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -87,7 +87,7 @@ export const Orders2 = () => {
   const getOrders = async () => {
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getalluserorders/${user?.email}`
+        `https://axionbackend2.betsphere.com.ng/api/getalluserorders/${user?.email}`
       );
       console.log(newData);
       setOrders(newData?.data?.data || []);

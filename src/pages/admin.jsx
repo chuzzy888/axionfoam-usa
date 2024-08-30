@@ -352,7 +352,7 @@ export const Admin = () => {
         throw new Error("");
       }
       const data = await axios.post(
-        "http://localhost:3000/api/addproduct",
+        "https://axionbackend2.betsphere.com.ng/api/addproduct",
 
         {
           name: name,
@@ -386,7 +386,7 @@ export const Admin = () => {
   };
   const getAllProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/getproducts");
+      const response = await axios.get("https://axionbackend2.betsphere.com.ng/api/getproducts");
       console.log(response?.data?.data);
       setAllProducts(response?.data?.data);
       setFilteredProducts(response?.data?.data);
@@ -399,7 +399,7 @@ export const Admin = () => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getdollarrate"
+        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
@@ -411,7 +411,7 @@ export const Admin = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3000/api/adddollarrate",
+        "https://axionbackend2.betsphere.com.ng/api/adddollarrate",
         {
           newRate: newRate,
         }
@@ -444,7 +444,7 @@ export const Admin = () => {
       // });
 
       const response = await axios.put(
-        "http://localhost:3000/api/deleteimage",
+        "https://axionbackend2.betsphere.com.ng/api/deleteimage",
         {
           id,
           images: filtered,
@@ -461,7 +461,7 @@ export const Admin = () => {
   const handleProductDelete = async (id, name) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/deleteproduct/${id}`
+        `https://axionbackend2.betsphere.com.ng/api/deleteproduct/${id}`
       );
 
       getAllProducts();
@@ -475,7 +475,7 @@ export const Admin = () => {
       console.log("Loading");
       setaddingproductimg(true);
       const response = await axios.put(
-        "http://localhost:3000/api/addproductimage",
+        "https://axionbackend2.betsphere.com.ng/api/addproductimage",
 
         {
           id,
@@ -490,7 +490,7 @@ export const Admin = () => {
       getAllProducts();
 
       const getproducts = await axios.get(
-        "http://localhost:3000/api/getproducts"
+        "https://axionbackend2.betsphere.com.ng/api/getproducts"
       );
 
       setTimeout(() => {
@@ -510,7 +510,7 @@ export const Admin = () => {
   const updateProduct = async () => {
     try {
       seteditingProduct(true);
-      const response = await axios.put("http://localhost:3000/api/updatename", {
+      const response = await axios.put("https://axionbackend2.betsphere.com.ng/api/updatename", {
         id: editingId,
         name,
         category,
@@ -574,7 +574,7 @@ export const Admin = () => {
   };
   const getAllOrders = async () => {
     try {
-      const newData = await axios.get(`http://localhost:3000/api/getallorders`);
+      const newData = await axios.get(`https://axionbackend2.betsphere.com.ng/api/getallorders`);
       console.log(newData);
       setOrders(newData?.data?.data || null);
       setoriginalOrders(newData?.data?.data || null);
@@ -587,7 +587,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.post(
-        `http://localhost:3000/api/changedelivered`,
+        `https://axionbackend2.betsphere.com.ng/api/changedelivered`,
         {
           orderId: id,
           newStatus,
@@ -602,7 +602,7 @@ export const Admin = () => {
   const handleSpam = async (id, newStatus) => {
     // console.log(id, newStatus);
     try {
-      const newData = await axios.post(`http://localhost:3000/api/changespam`, {
+      const newData = await axios.post(`https://axionbackend2.betsphere.com.ng/api/changespam`, {
         orderId: id,
         newStatus,
       });
@@ -615,7 +615,7 @@ export const Admin = () => {
   const getAllUsersLen = async () => {
     // console.log(id, newStatus);
     try {
-      const newData = await axios.get(`http://localhost:3000/api/getallusers`);
+      const newData = await axios.get(`https://axionbackend2.betsphere.com.ng/api/getallusers`);
       setAllusers(newData.data);
     } catch (error) {
       console.log(error);
@@ -625,7 +625,7 @@ export const Admin = () => {
   const getMessages = async () => {
     // console.log(id, newStatus);
     try {
-      const newData = await axios.get(`http://localhost:3000/api/getmessages`);
+      const newData = await axios.get(`https://axionbackend2.betsphere.com.ng/api/getmessages`);
       setMessages(newData.data);
     } catch (error) {
       console.log(error);
@@ -636,7 +636,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getallproducts`
+        `https://axionbackend2.betsphere.com.ng/api/getallproducts`
       );
       setAllProductsLen(newData.data);
     } catch (error) {
@@ -648,7 +648,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getallorderslen`
+        `https://axionbackend2.betsphere.com.ng/api/getallorderslen`
       );
       setAllOrders(newData.data);
     } catch (error) {
@@ -660,7 +660,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getpendingorders`
+        `https://axionbackend2.betsphere.com.ng/api/getpendingorders`
       );
       setPendingOrders(newData.data);
     } catch (error) {
@@ -672,7 +672,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getallMessageslen`
+        `https://axionbackend2.betsphere.com.ng/api/getallMessageslen`
       );
       setMessageLen(newData.data);
     } catch (error) {
@@ -684,7 +684,7 @@ export const Admin = () => {
     // console.log(id, newStatus);
     try {
       const newData = await axios.get(
-        `http://localhost:3000/api/getsettledorders`
+        `https://axionbackend2.betsphere.com.ng/api/getsettledorders`
       );
       setSettledOrders(newData.data);
     } catch (error) {

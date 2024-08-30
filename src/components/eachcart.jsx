@@ -238,7 +238,7 @@ export const Eachcart = ({ item, _index, getCartItems, getSubTotal }) => {
   const getDollarRate = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/getdollarrate"
+        "https://axionbackend2.betsphere.com.ng/api/getdollarrate"
       );
       setDollarRate(response?.data[0]?.currentrate || 0);
     } catch (error) {
