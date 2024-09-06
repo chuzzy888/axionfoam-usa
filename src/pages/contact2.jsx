@@ -301,7 +301,7 @@ export const Contact2 = () => {
                       <div className="content">
                         <strong>Mail address</strong>
                         <a href="mailto:Axionfoam.ng@gmail.com">
-                          Axionfoam.ng@gmail.com
+                          Axionfoam@gmail.com
                         </a>
                         <br />
                       </div>
@@ -313,14 +313,14 @@ export const Contact2 = () => {
                       <div className="icon flaticon-map" />
                       <div className="content">
                         <strong>Axion Showrooms</strong>
-                        <div className="text">
+                        {/* <div className="text">
                           Adunni Mall, 30 Addo Road Lekki-Ajah
                         </div>
                         <div className="text">
                           41 Okuru link road, Odili road, Port Harcourt
-                        </div>
+                        </div> */}
                         <div className="text">
-                          23332 Farmington Road, Farmington, Michigan
+                          24353 Chippewa CT <br /> Farmington Hills, Michigan
                         </div>
                       </div>
                     </div>
@@ -333,7 +333,7 @@ export const Contact2 = () => {
                         <strong>Phone Number</strong>
                         <a href="tel:+12482823277">+12482823277</a>
                         <br />
-                        <a href="tel:08113805555">08113805555</a>
+                        {/* <a href="tel:08113805555">08113805555</a> */}
                       </div>
                     </div>
                   </div>
@@ -396,7 +396,7 @@ export const Contact2 = () => {
               {/* Contact Form */}
               <div className="contact-form">
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={e => {
                     e.preventDefault();
                   }}
                 >
@@ -408,7 +408,7 @@ export const Contact2 = () => {
                         placeholder="Enter Your name"
                         required
                         value={name}
-                        onChange={(e) => {
+                        onChange={e => {
                           setName(e.target.value);
                         }}
                         style={{
@@ -423,7 +423,7 @@ export const Contact2 = () => {
                         placeholder="Enter Email Address*"
                         required
                         value={email}
-                        onChange={(e) => {
+                        onChange={e => {
                           setEmail(e.target.value);
                         }}
                         style={{
@@ -439,7 +439,7 @@ export const Contact2 = () => {
                         placeholder="Enter Phone Number"
                         required
                         value={phone}
-                        onChange={(e) => {
+                        onChange={e => {
                           setPhone(e.target.value);
                         }}
                         style={{
@@ -454,7 +454,7 @@ export const Contact2 = () => {
                         placeholder="Enter Your Message here"
                         defaultValue={""}
                         value={message}
-                        onChange={(e) => {
+                        onChange={e => {
                           setMessage(e.target.value);
                         }}
                         style={{

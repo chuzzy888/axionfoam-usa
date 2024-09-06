@@ -56,51 +56,51 @@ export const Shop = () => {
     if (category?.toUpperCase() === "ALL") {
       setDisplayedData(productData);
     } else if (category?.toUpperCase() === "MATTRESS") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "MATTRESS";
       });
       console.log(data);
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "TOPPERS") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "TOPPER";
       });
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "PILLOWS") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "PILLOW";
       });
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "BEDBASE") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "BEDBASE";
       });
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "PROTECTORS") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "PROTECTOR";
       });
 
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "MATS") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "MATS";
       });
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "CUSHION") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "CUSHION";
       });
 
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "COMPRESSION") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "COMPRESSION";
       });
 
       setDisplayedData(data);
     } else if (category?.toUpperCase() === "TRAVEL") {
-      const data = productData.filter((eachMattress) => {
+      const data = productData.filter(eachMattress => {
         return eachMattress?.category?.toUpperCase() === "TRAVEL";
       });
 
@@ -401,7 +401,7 @@ export const Shop = () => {
                     <div className="right-box d-flex">
                       <div class="myselect">
                         <select
-                          onChange={(e) => {
+                          onChange={e => {
                             navigate(`/shop?category=${e.target.value}`);
                             window.scrollTo(0, 0);
                             getData();
@@ -430,7 +430,7 @@ export const Shop = () => {
                 <div className="shops-outer">
                   <div className="row clearfix">
                     {/* Shop Item */}
-                    {displayedData.slice(0, numberDisplayed).map((item) => {
+                    {displayedData.slice(0, numberDisplayed).map(item => {
                       return <Eachproduct item={item}></Eachproduct>;
                     })}
                     {displayedData.length === 0 && (
@@ -482,7 +482,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "MATTRESS"
@@ -500,7 +500,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "TOPPER"
@@ -518,7 +518,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "CUSHION"
@@ -536,7 +536,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "PILLOW"
@@ -553,7 +553,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "BEDBASE"
@@ -570,7 +570,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "PROTECTOR"
@@ -587,7 +587,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "MATS"
@@ -604,7 +604,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "COMPRESSION"
@@ -621,7 +621,7 @@ export const Shop = () => {
                             <span>
                               (
                               {
-                                productData.filter((eachMattress) => {
+                                productData.filter(eachMattress => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "TRAVEL"
@@ -654,7 +654,7 @@ export const Shop = () => {
                           Buy Now
                         </a>
                         <div className="icon">
-                          <img src="cooling.png" alt="" />
+                          <img src="cd.png" alt="" />
                         </div>
                       </div>
                     </div>

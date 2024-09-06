@@ -30,30 +30,31 @@ export const Footer = () => {
                         <span className="icon flaticon-map" />
                         <strong>Axion Showrooms -</strong>
                         <br />
-                        <br />
+                        {/* <br /> */}
                         <a
-                          href="https://maps.google.com/?q=30 Addo Road"
+                          href="https://maps.app.goo.gl/Uxxe4uk9sj8TbdaB7"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Adunni Mall,{" "}
+                          24353 Chippewa CT
+                          <br />
                         </a>
-                        30 Addo Road Lekki-Ajah
-                        <br />
-                        <br />
-                        <a
+                        Farmington Hills, Michigan{" "}
+                        {/* <br />
+                        <br /> */}
+                        {/* <a
                           href="https://maps.google.com/?q=30 Addo Road"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           41 Okuru link road,{" "}
                         </a>
-                        Odili road, Port Harcourt
+                        Odili road, Port Harcourt */}
                         <br />
                       </li>
                       <li>
                         <span className="icon flaticon-call" />
-                        08113705555
+                        +12482823277
                       </li>
                     </ul>
                   </div>

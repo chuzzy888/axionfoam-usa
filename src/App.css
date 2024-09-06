@@ -171,8 +171,6 @@ video {
   background-color: rgba(112, 128, 144, 0.123);
 }
 
-
-
 .categorycard1 {
   background-image: url(./pages/newaxn3.gif);
   height: 300px;
@@ -187,27 +185,27 @@ video {
   background-position: bottom center;
   transition: 0.5s ease-in;
   background-color: rgba(0, 0, 0, 0.185);
-  background-blend-mode: darken;
+  background-blend-mode: darken;
 }
 
 @media (max-width: 767px) {
-  .categories{
+  .categories {
     height: 1200px;
   }
-  .categorycard1{
+  .categorycard1 {
     height: 500px;
   }
-  .categorycard2{
-    height:500px;}
+  .categorycard2 {
+    height: 500px;
+  }
 }
 
-.titlebg{
-  
+.titlebg {
   background-color: rgba(35, 34, 34, 0.114) !important;
   /* padding: 120px 0; */
   text-align: center;
   background-size: cover;
-  background-position:  30center ;
+  background-position: 30center;
   background-blend-mode: overlay;
 }
 
@@ -232,24 +230,24 @@ video {
   color: red !important;
 } */
 
-.productimage{
+.productimage {
   height: 300px;
   object-fit: cover;
   object-position: bottom center;
 }
 
-.slate{
+.slate {
   background-color: rgba(128, 128, 128, 0.1);
 }
 
-.acct{
+.acct {
   margin-top: -4px;
   margin-left: 2px;
 }
-.belowtitle{
+.belowtitle {
   background-color: rgba(128, 128, 128, 0.053);
 }
-.dfooter{
+.dfooter {
   background-color: rgba(0, 0, 0, 0.016) !important;
 }
 
@@ -394,7 +392,7 @@ video {
   text-decoration: none;
 }
 
-.gray{
+.gray {
   padding: 0;
   margin: 0;
   /* background-color: gainsboro; */
@@ -403,43 +401,41 @@ video {
   overflow-y: hidden !important;
 }
 
-@media (min-width:1023px) {
-  .nomax{
+@media (min-width: 1023px) {
+  .nomax {
     display: none !important;
   }
 }
 
-.searchnav{
-  position: fixed ;
+.searchnav {
+  position: fixed;
   top: 0;
   width: 100vw;
 }
 
-.figureimage{
+.figureimage {
   height: 300px !important;
- 
+
   object-fit: cover;
 }
 
-.darkfooter{
+.darkfooter {
   background-color: rgba(0, 0, 0, 0.098) !important;
 }
 
-
-.grayy{
+.grayy {
   background-color: rgba(128, 128, 128, 0.082);
   min-height: 100vh;
 }
 
-.profile{
-  display: flex ;
+.profile {
+  display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 130px 0;
-
 }
 
-.avatar-div{
+.avatar-div {
   background-color: white;
   border-radius: 12px;
   padding: 10px 20px;
@@ -447,80 +443,72 @@ video {
   flex-direction: column;
   align-items: center;
 }
-.info-div{
+.info-div {
   background-color: white;
   border-radius: 12px;
   padding: 10px 20px;
 }
 
-.userIcon{
+.userIcon {
   width: 200px;
 }
 
-.profilebutton{
+.profilebutton {
   padding: 8px 0;
   width: 100%;
   border-radius: 10px;
   background-color: rgb(28, 158, 223);
   font-weight: bold;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   color: white;
 }
-.profilebutton:hover{
-
+.profilebutton:hover {
   background-color: rgb(14, 113, 163);
-  
 }
 
-.mygrid{
-  display: grid ;
+.mygrid {
+  display: grid;
   grid-template-columns: 30% 30% 30%;
   justify-content: space-around;
 }
 
-
-.compare{
+.compare {
   display: flex;
   justify-content: center;
 }
 
-.varline{
+.varline {
   display: none;
 }
-
-
 
 .sizes {
   max-width: 50vw;
   flex-wrap: wrap;
   row-gap: 20px;
 }
-.comparediv{
+.comparediv {
   display: flex;
 }
 
-@media (max-width:800px) {
-  .horline{
+@media (max-width: 800px) {
+  .horline {
     display: none;
   }
-  .comparediv{
+  .comparediv {
     flex-direction: column;
     align-items: center;
   }
-  .varline{
+  .varline {
     display: block;
   }
 }
 
-
-.twodiv{
+.twodiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.mypopup .modal-dialog{
-
+.mypopup .modal-dialog {
   max-width: 50vw !important;
-
 }

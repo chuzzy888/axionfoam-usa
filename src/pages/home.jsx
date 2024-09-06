@@ -10,6 +10,7 @@ import axios from "axios";
 import { EachBlog } from "./eachblog";
 import { blogdata } from "../assets/blogdata";
 import Accordion from "react-bootstrap/Accordion";
+import PromoModal from "../components/PromoModal";
 
 // import $ from "jquery";
 
@@ -276,6 +277,7 @@ export const Home = () => {
                     </li>
                   </ul>
                 </div>
+
                 {/* <!-- End Select Categories -->
 					
 					<!-- Main Menu --> */}
@@ -1187,6 +1189,7 @@ export const Home = () => {
             </div>
           </div>
         </section>
+        <PromoModal />
         {/* End Main Section Three */}
         {/* Featured Section */}
         <section className="featured-section">
@@ -1298,12 +1301,18 @@ export const Home = () => {
           </div>
         </div> */}
 
-        <div class="container mt-2">
+        <div class="container ">
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
-            <h2 class="h2 fw-bold">Shop by Category</h2>
-            <p class="text-muted text-center">
-              "Explore premium bedding essentials for ultimate comfort and
-              support."
+            <h2 class="h2 fw-bold ">
+              <span style={{ fontSize: "25px" }}> Shop by </span>
+
+              <span style={{ fontWeight: "100", fontSize: "25px" }}>
+                Category
+              </span>
+            </h2>
+            <p class="text-muted text-center d-lg-none ">
+              Explore premium bedding essentials for ultimate comfort and
+              support.
             </p>
           </div>
           <div class="row g-4">
@@ -1400,11 +1409,11 @@ export const Home = () => {
             </div>
             <div className="row clearfix">
               {productData
-                .filter((item) => {
+                .filter(item => {
                   return item.popular === "true" || item.popular === true;
                 })
                 .slice(0, 4)
-                .map((item) => {
+                .map(item => {
                   return <Eachproducthome item={item}></Eachproducthome>;
                 })}
             </div>
@@ -1439,7 +1448,7 @@ export const Home = () => {
                       </div>
                       <div className="circle-layer" />
                       <img
-                        src="hybrid.png"
+                        src="hb.png"
                         alt=""
                         style={{ width: "250px", marginLeft: "-10px" }}
                       />
@@ -1466,7 +1475,7 @@ export const Home = () => {
                       </div>
                       <div className="circle-layer" />
                       <img
-                        src="cooling.png"
+                        src="cd.png"
                         alt=""
                         style={{ width: "300px", marginLeft: "-10px" }}
                       />
@@ -1486,47 +1495,27 @@ export const Home = () => {
         </div>
         <div className="mx-3">
           <Slider {...settings}>
-            {/* <img src="displaypictures/rfoam2.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam11.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam12.jpg" alt="" className="dp" />
+            <img src="displaypictures/rfoam2.jpg" alt="" className="dp" />
+            {/* <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
+            {/* <img src="displaypictures/rfoam12.jpg" alt="" className="dp" /> */}
             <img src="displaypictures/rfoam3.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam4.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper1.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam5.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper2.jpg" alt="" className="dp" />
+            {/* <img src="displaypictures/mtopper1.jpg" alt="" className="dp" /> */}
+            <img src="cp.jpg" alt="" className="dp" />
+            <img src="ht.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam6.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper1.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam7.jpg" alt="" className="dp" />
-            <img src="displaypictures/downtopper4.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam8.jpg" alt="" className="dp" />
-            <img src="displaypictures/downtopper2.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam13.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam9.jpg" alt="" className="dp" />
+            <img src="pd.jpg" alt="" className="dp" />
 
-            <img src="displaypictures/downtopper3.jpg" alt="" className="dp" />
+            <img src="de.jpg" alt="" className="dp" />
+            <img src="lp.jpg" alt="" className="dp" />
+            <img src="fy.jpg" alt="" className="dp" />
+            <img src="ap.jpg" alt="" className="dp" />
+            {/* <img src="cd.png" alt="" className="dp" /> */}
 
-            <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
+            {/* <img src="displaypictures/downtopper3.jpg" alt="" className="dp" /> */}
 
-            <img src="displaypictures/ax1 (1).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (2).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (3).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (4).jpeg" alt="" className="dp" />
-            {/* <img src="displaypictures/ax1 (5).jpeg" alt="" className="dp" /> */}
-            <img src="displaypictures/ax1 (6).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (7).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (8).jpeg" alt="" className="dp" />
-            {/* <img src="displaypictures/ax1 (9).jpeg" alt="" className="dp" /> */}
-            {/* <img src="displaypictures/ax1 (10).jpeg" alt="" className="dp" /> */}
-            <img src="displaypictures/ax1 (11).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (12).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (13).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (14).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (15).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (16).jpeg" alt="" className="dp" />
-
-            {/* <img src="displaypictures/ax1 (17).jpeg" alt="" className="dp" /> */}
-
-            <img src="displaypictures/ax1 (18).jpeg" alt="" className="dp" />
+            {/* <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
           </Slider>
         </div>
 
@@ -1591,9 +1580,8 @@ export const Home = () => {
 
         <div className="vw-100 mt-2 pt-4">
           <h3 className=" ms-3 mb-5 text-center  fs-4 w-full text-primary">
-            Sleep <span className="text-danger ">reimagined</span>, your story
-            begins with Axion
-            <span className="text-danger ms-1">Foam</span>
+            <span className="text-danger "> Sleep reimagined your story ,</span>
+            <span className="text-primary ms-1"> begins with Axion Foam</span>
           </h3>
         </div>
         <div className="d-flex justify-content-center mb-5">
@@ -1662,7 +1650,7 @@ export const Home = () => {
                   {/* Subscribe Box Two */}
                   <div className="subscribe-box-two">
                     <form
-                      onSubmit={(e) => {
+                      onSubmit={e => {
                         e.preventDefault();
                       }}
                     >
@@ -1727,7 +1715,7 @@ export const Home = () => {
               </button>
             </div>
             <div className="row clearfix">
-              {blogdata.slice(0, 4).map((item) => {
+              {blogdata.slice(0, 4).map(item => {
                 return <EachBlog item={item}></EachBlog>;
               })}
             </div>
