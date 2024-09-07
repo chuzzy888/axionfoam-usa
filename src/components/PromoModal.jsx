@@ -19,7 +19,7 @@ const PromoModal = () => {
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <img src="bn.jpeg" alt="Promo Banner" className="img-fluid" />
+        <img src="bnn.jpeg" alt="Promo Banner" className="img-fluid" />
       </Modal.Body>
       <Modal.Footer>
         <a href="/shop?category=mattress">
