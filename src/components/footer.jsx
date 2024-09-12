@@ -28,8 +28,8 @@ export const Footer = () => {
                     <ul className="contact-list">
                       <li>
                         <span className="icon flaticon-map" />
-                        <strong>Axion Showrooms -</strong>
-                        <br />
+                        {/* <strong>Axion </strong>
+                        <br /> */}
                         {/* <br /> */}
                         <a
                           href="https://maps.app.goo.gl/Uxxe4uk9sj8TbdaB7"

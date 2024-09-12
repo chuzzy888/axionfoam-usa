@@ -288,7 +288,109 @@ export const Contact2 = () => {
         </section>
         {/* End Page Title */}
         {/* Contact Page Section */}
+
         <div className="contact-page-section">
+          <div className="contact-boxed">
+            {/* Title Box */}
+            <div className="title-box">
+              <h3>Send a message</h3>
+              <div className="text">
+                Your email address will not be published. Required fields are
+                marked *
+              </div>
+            </div>
+            {/* Contact Form */}
+            <div className="contact-form">
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="row clearfix">
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Enter Your name"
+                      required
+                      value={name}
+                      onChange={e => {
+                        setName(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Enter Email Address*"
+                      required
+                      value={email}
+                      onChange={e => {
+                        setEmail(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Enter Phone Number"
+                      required
+                      value={phone}
+                      onChange={e => {
+                        setPhone(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <textarea
+                      className
+                      name="message"
+                      placeholder="Enter Your Message here"
+                      defaultValue={""}
+                      value={message}
+                      onChange={e => {
+                        setMessage(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <div className="buttons-box">
+                      {!loading ? (
+                        <button
+                          onClick={() => {
+                            sendMessage();
+                          }}
+                          className="theme-btn btn-style-one"
+                        >
+                          Send message
+                        </button>
+                      ) : (
+                        <button className="theme-btn btn-style-one">
+                          Loading...
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            {/* End Contact Form */}
+          </div>
           <div className="auto-container">
             <div className="row clearfix">
               {/* Info Column */}
@@ -312,7 +414,7 @@ export const Contact2 = () => {
                     <div className="box-inner d-flex align-items-center">
                       <div className="icon flaticon-map" />
                       <div className="content">
-                        <strong>Axion Showrooms</strong>
+                        <strong>Axion </strong>
                         {/* <div className="text">
                           Adunni Mall, 30 Addo Road Lekki-Ajah
                         </div>
@@ -384,107 +486,7 @@ export const Contact2 = () => {
               </div> */}
             </div>
             {/* Contact Boxed */}
-            <div className="contact-boxed">
-              {/* Title Box */}
-              <div className="title-box">
-                <h3>Send a message</h3>
-                <div className="text">
-                  Your email address will not be published. Required fields are
-                  marked *
-                </div>
-              </div>
-              {/* Contact Form */}
-              <div className="contact-form">
-                <form
-                  onSubmit={e => {
-                    e.preventDefault();
-                  }}
-                >
-                  <div className="row clearfix">
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="username"
-                        placeholder="Enter Your name"
-                        required
-                        value={name}
-                        onChange={e => {
-                          setName(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="email"
-                        placeholder="Enter Email Address*"
-                        required
-                        value={email}
-                        onChange={e => {
-                          setEmail(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
 
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="phone"
-                        placeholder="Enter Phone Number"
-                        required
-                        value={phone}
-                        onChange={e => {
-                          setPhone(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                      <textarea
-                        className
-                        name="message"
-                        placeholder="Enter Your Message here"
-                        defaultValue={""}
-                        value={message}
-                        onChange={e => {
-                          setMessage(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                      <div className="buttons-box">
-                        {!loading ? (
-                          <button
-                            onClick={() => {
-                              sendMessage();
-                            }}
-                            className="theme-btn btn-style-one"
-                          >
-                            Send message
-                          </button>
-                        ) : (
-                          <button className="theme-btn btn-style-one">
-                            Loading...
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              {/* End Contact Form */}
-            </div>
             {/* End Contact Boxed */}
           </div>
         </div>
